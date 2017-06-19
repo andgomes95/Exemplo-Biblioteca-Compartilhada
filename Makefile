@@ -5,9 +5,8 @@ INCLUDE_DIR := include
 LIB_NAME    := aritmetico
 LIB_VERSION := 1
 
-all: dyn
-stc: static main
-dyn: dynamic way main
+all: install teste
+stc: static teste
 #-------------------object--------------------------------
 object:
 	gcc	-c	$(LIBDIR)/*.c	-fPIC
@@ -23,7 +22,7 @@ dynamic:	object
 	ln	-s	lib$(LIB_NAME).so.$(LIB_VERSION)	$(OBJDIR)/lib$(LIB_NAME).so
 #------------teste------------------------------------------
 teste:
-	gcc	-Wall	-c	$(MAINNAME).c
+	gcc	-c	$(MAINNAME).c
 	gcc	-o	$(MAINNAME)	$(MAINNAME).o	-L$(OBJDIR)	-l$(LIB_NAME)
 #------------install---------------------------------------------------
 install: dynamic
