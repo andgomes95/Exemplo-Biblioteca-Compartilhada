@@ -1,8 +1,5 @@
 #include <stdio.h>
-#include "soma.h"
-#include "sub.h"
-#include "div.h"
-#include "mul.h"
+#include <aritmetico.h>
 int main(){
 	printf("A Soma de 2 e 3 é: %d\n",soma(2,3));
 	printf("A Subtração de 2 e 3 é: %d\n",sub(2,3));
